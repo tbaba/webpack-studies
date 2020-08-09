@@ -7,7 +7,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const mode = process.env.NODE_ENV;
 
 module.exports = {
-  mode: mode,
+  mode,
   entry: './src/index.js',
   output: {
     filename: 'main.js',
@@ -16,9 +16,15 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
         test: /\.(sc|c)ss$/,
