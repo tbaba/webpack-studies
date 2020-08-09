@@ -1,0 +1,28 @@
+{
+  "name": "webpack-studies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "lodash": "^4.17.19",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbaba/webpack-studies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbaba/webpack-studies/issues"
+  },
+  "homepage": "https://github.com/tbaba/webpack-studies#readme"
+}
