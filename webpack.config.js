@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const mode = process.env.NODE_ENV;
 
 module.exports = {
@@ -10,6 +11,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
@@ -34,8 +40,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.html?$/,
+        loader: 'html-loader',
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+    }),
+  ],
   devServer: {
     contentBase: './dist',
   }
